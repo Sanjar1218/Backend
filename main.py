@@ -13,7 +13,7 @@ def get_male_data(file_name = 'data.json', n=1):
     dct = {} 
     while i<n:
         try:
-            r = requests.get('https://randomuser.me/api').json()
+            r = requests.get('https://randomuser.m/api').json()
             # print(r.json())
             result = r['results'][0]
             
@@ -30,5 +30,6 @@ def get_male_data(file_name = 'data.json', n=1):
             print('e')
             continue
     f.write(str(lst))
-
-get_male_data('data1', 100)
+# r = requests.get('https://randomuser.me/api')
+# pprint(type(r))
+# get_male_data('data1', 10)
