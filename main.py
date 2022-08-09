@@ -18,7 +18,7 @@ def get_male_data(file_name = 'data.json', n=1):
             # print(r.json())
             result = r['results'][0]
             
-
+            dct ={} 
             if result['gender'] == 'male':
                 i+=1
                 print(i)
@@ -30,8 +30,8 @@ def get_male_data(file_name = 'data.json', n=1):
         except:
             print('e')
             continue
-    dct = {'results':lst}
-    json.dump(dct, f, ensure_ascii=False, indent=2)
+    dct1 = {'results':lst}
+    json.dump(dct1, f, ensure_ascii=False, indent=2)
     f.close()
 
 get_male_data('data1', 3)
