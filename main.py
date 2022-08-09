@@ -1,5 +1,6 @@
 
 import requests
+import json
 from pprint import pprint
  
 def get_male_data(file_name = 'data.json', n=1):
@@ -13,7 +14,7 @@ def get_male_data(file_name = 'data.json', n=1):
     dct = {} 
     while i<n:
         try:
-            r = requests.get('https://randomuser.m/api').json()
+            r = requests.get('https://randomuser.me/api').json()
             # print(r.json())
             result = r['results'][0]
             
@@ -29,7 +30,8 @@ def get_male_data(file_name = 'data.json', n=1):
         except:
             print('e')
             continue
-    f.write(str(lst))
-# r = requests.get('https://randomuser.me/api')
-# pprint(type(r))
-# get_male_data('data1', 10)
+    dct = {'results':lst}
+    json.dump(dct, f)
+    f.close()
+
+get_male_data('data1', 3)
