@@ -29,7 +29,7 @@ def get_male_data(file_name = 'data.json', n=1):
                 dct['age'] = result['dob']['age']
                 lst.append(dct)
     dct1 = {'results':lst}
-    json.dump(dct1, f, ensure_ascii=False, indent=2)
+    json.dump(dct1, f, ensure_ascii=True, indent=2)
     f.close()
 
 get_male_data('data1', 100)
