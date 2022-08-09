@@ -31,7 +31,7 @@ def get_male_data(file_name = 'data.json', n=1):
             print('e')
             continue
     dct = {'results':lst}
-    json.dump(dct, f)
+    json.dump(dct, f, ensure_ascii=False, indent=2)
     f.close()
 
 get_male_data('data1', 3)
