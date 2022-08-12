@@ -3,7 +3,7 @@ import requests
 import json
 from pprint import pprint
  
-def get_male_data(file_name = 'data.json', n=1):
+def get_male_data(file_name:str = 'data.json', n:int=1)->None:
     if file_name.find('json')==-1:
         f = open(file_name+'.json', 'w')
     else:
