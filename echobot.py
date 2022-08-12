@@ -4,9 +4,8 @@ token = '5446020024:AAHcDq0gInuUnVWolbamoUNoqbFA490U4N8'
 update_id = -1
 while True:
     r = requests.get(f'{url}{token}/getUpdates')
-    if r.status_code==200:
+    if r.ok:
         result = r.json()['result'][-1]
-        print('restul: ', result)
         if update_id != result['update_id']:
             update_id = result['update_id']
             chat_id = result['message']['chat']['id']
